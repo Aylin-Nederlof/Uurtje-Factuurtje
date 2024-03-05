@@ -13,7 +13,6 @@ const Form = styled.form`
   flex-direction: column;
   max-width: 720px;
   gap: 16px;
-  
 `;
 
 interface CreateInvoicFormData {

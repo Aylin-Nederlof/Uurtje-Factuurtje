@@ -1,4 +1,6 @@
 import Nav from '../components/Nav';
+import React from 'react';
+
 export interface layoutProps {
   children: React.ReactNode;
 }
