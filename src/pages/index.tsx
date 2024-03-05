@@ -16,7 +16,7 @@ export default function Home() {
 
       {user && (
         <div>
-          <div className="flex mx-auto w-full gap-4">
+          <div className="flex mx-auto w-full gap-4 ">
             <div className="w-full grid grid-cols-2 gap-4 ">
               <div className="p-4 bg-an-lightgray rounded-md">
                 Alle facturen

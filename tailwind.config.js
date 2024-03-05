@@ -15,6 +15,7 @@ module.exports = {
         'an-green-lighter': '#dafd86',
         'an-green': '#cbfc56',
         'an-green-darker': '#bafc22',
+        'an-greige': '#dfd7ca',
         'an-gray': '#e9e9e9',
         'an-lightgray': '#f8f8f8',
       },

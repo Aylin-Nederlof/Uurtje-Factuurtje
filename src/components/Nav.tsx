@@ -4,6 +4,8 @@ import logo from '../../public/static/images/Logo-uurtje-factuurtje.svg';
 
 import { auth } from '../../utils/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Button } from './Buttons/Button';
+import router from 'next/router';
 
 const Nav = () => {
   const [user, loading] = useAuthState(auth);
@@ -30,33 +32,9 @@ const Nav = () => {
         )}
         {user && (
           <div className="flex items-center gap-4">
-            <Link href="/createInvoice">
-              <button className="text-sm font-medium bg-an-green rounded-md py-2 px-4 text-black border-an-green border-2 border-sm transition hover:bg-an-green-darker">
-                Create invoice
-              </button>
-            </Link>
-            <Link href="/">
-              <button className="text-sm font-medium  bg-black rounded-md py-2 px-4 text-white border-black border-2 border-sm transition hover:bg-gray-800 hover:border-bg-gray-800">
-                Dashboard
-              </button>
-            </Link>
-            <Link href="/myaccount">
-              <button className="text-sm font-medium  bg-an-purple rounded-md py-2 px-4 text-white border-an-purple border-2 border-sm transition hover:bg-an-purple-darker hover:border-an-purple-darker">
-                Mijn UF
-              </button>
-            </Link>
-            <button
-              onClick={() => auth.signOut()}
-              className="text-sm font-medium bg-white rounded-md py-2 px-4 text-black transition hover:underline"
-            >
-              Sign out
-            </button>
-            {/* <Link href="/">
-              <img
-                className="w-10 rounded-full cursor-pointer"
-                src={user.photoURL}
-              />
-            </Link> */}
+          <Button onClick={() => router.push('/createInvoice')} $variant="primary">Create invoice</Button>
+          <Button onClick={() => router.push('/')} $variant="black">Dashboard</Button>
+          <Button $variant={'underlined'} onClick={() => auth.signOut()}>Sign out</Button>
           </div>
         )}
       </ul>
